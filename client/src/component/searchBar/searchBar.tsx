@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
@@ -8,7 +8,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Axios from 'axios';
 import FormControl from "@material-ui/core/FormControl";
-import CardTemplate from '../Cards/cardTemplate';
+import Cards from '../MainContent/cardList';
+import EmptyState from '../MainContent/emptyState';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Search from "@material-ui/icons/Search";
 
@@ -82,13 +83,9 @@ export default function InputAdornments() {
           </div>
         </div>
       </Grid>
-      <Grid item><CardTemplate></CardTemplate></Grid>
-      <Grid item>
-        <img
-          src={require("../../Assets/images/logo design.jpg")}
-          className={classes.footerImage}
-        />
-      </Grid>
+    <Grid item>
+        <Cards></Cards>
+    </Grid>
     </Grid>
   );
 }

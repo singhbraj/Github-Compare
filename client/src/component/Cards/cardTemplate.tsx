@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card,Grid,Avatar,Typography,Divider} from '@material-ui/core';
+import ClearIcon from '@material-ui/icons/Clear';
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles=makeStyles({
@@ -14,8 +15,10 @@ const useStyles=makeStyles({
 export default function CardTemplate() {
     const classes=useStyles();
     return (
-       <Card style={{height:"130px",padding:"25px"}}>
-       <Grid container direction="column">
+       <Card style={{padding:"15px"}}>
+        <ClearIcon style={{float:"right",color:"red",fontSize:"12px"}}></ClearIcon>
+       <Grid container direction="column"  >
+         
            <Grid item>
             <Grid container spacing={2}>
                 <Grid item >
