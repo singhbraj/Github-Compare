@@ -12,6 +12,8 @@ import Cards from '../MainContent/cardList';
 import EmptyState from '../MainContent/emptyState';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Search from "@material-ui/icons/Search";
+import { useSelector, useDispatch } from 'react-redux';
+import {fetchDetails} from '../../action/dataListAction';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +39,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function InputAdornments() {
+  const dispatch = useDispatch();
+  const dataList = useSelector(
+    (store: any) => store.Data
+  );
   const classes = useStyles();
   const [searchQuery,setSearchQuery]=useState({
       data:''
@@ -54,9 +60,10 @@ export default function InputAdornments() {
             console.log(response.data);
             setLoading(false);
         })
+        dispatch(fetchDetails(searchQuery.data));
     }
 
-
+console.log(dataList);
   return (
     <Grid container>
       <Grid item>
