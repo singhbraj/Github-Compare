@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchBar from '../searchBar/searchBar';
+import SearchBar from './SearchBar';
 import {Grid,makeStyles,Typography, Button} from '@material-ui/core'
 
 const useStyles = makeStyles({
@@ -33,11 +33,11 @@ const useStyles = makeStyles({
 export default function Layout() {
     const classes = useStyles();
     return (
-      <Grid container>
-          <Grid item md={6}>
+      <Grid container >
+          <Grid item md={7}>
                <SearchBar></SearchBar>
           </Grid>
-          <Grid item md={6} className={classes.sideBanner} >
+          <Grid item md={5} className={classes.sideBanner} >
              <Typography variant="h2" className={classes.textPresentaion}>Spot the</Typography>
              <Typography variant="h2" className={classes.textPresentaion}>difference</Typography>
              <Typography variant="h2" className={classes.textPresentaion}>that matter</Typography>
